@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Lab23.Models;
 using Lab23.Data;
 using System.Threading.Tasks;
-
+using Lab23.Data.Model;
 
 namespace Lab23.Repositories
 {

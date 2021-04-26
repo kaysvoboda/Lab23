@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Lab23.Data;
+using Lab23.Data.Model;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Lab23

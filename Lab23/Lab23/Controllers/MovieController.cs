@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Lab23.Data;
 using Lab23.Models;
+using Lab23.Data.Model;
 using Lab23.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

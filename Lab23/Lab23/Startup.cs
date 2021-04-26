@@ -1,5 +1,6 @@
 using Lab23.Repositories;
 using Lab23.Data;
+using Lab23.Data.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

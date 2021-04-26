@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using Lab23.Data.Model;
 
-namespace Lab23.Data
+namespace Lab23.Data.Model
 {
     public class MovieDbContext:DbContext
     {

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Lab23.Data;
 using Lab23.Models;
+using Lab23.Data.Model;
 
 namespace Lab23.Repositories
 {

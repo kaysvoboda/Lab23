@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿
 
-namespace Lab23.Data
+namespace Lab23.Data.Model
 {
     public class Movie
     {
