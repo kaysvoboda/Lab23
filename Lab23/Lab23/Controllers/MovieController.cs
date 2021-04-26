@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Lab23.Controllers
 {
@@ -61,7 +60,7 @@ namespace Lab23.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Create([Bind("Id, Title, Genre, Runtime")] Movie movie)
+        public async Task<IActionResult> RegisterMovie([Bind("Id, Title, Genre, Runtime")] Movie movie)
         {
             if (!ModelState.IsValid)
             {

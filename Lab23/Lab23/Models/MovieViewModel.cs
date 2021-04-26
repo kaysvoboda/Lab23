@@ -9,6 +9,7 @@ namespace Lab23.Models
         public string Year { get; set; }
         public string Actors { get; set; }
         public string Directors { get; set; }
+        public double Runtime { get; set; }
         
     }
 }
