@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  lab23:
+    image: ${DOCKER_REGISTRY-}lab23
+    build:
+      context: .
+      dockerfile: Lab23/Dockerfile

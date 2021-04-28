@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Lab23.Data.Model.Movie>
+
+@{
+    ViewData["Title"] = "SearchResultGenre";
+}
+
+<p>
+    Your Results: @foreach (var item in Model)
+    {
+    <p>@item.Title</p>
+    <p>@item.Runtime</p>
+    <p>@item.Genre</p>
+
+}</p>
