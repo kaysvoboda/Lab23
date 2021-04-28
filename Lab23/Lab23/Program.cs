@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Lab23.Data;
-using Lab23.Data.Model;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Lab23
@@ -16,7 +15,7 @@ namespace Lab23
             {
                 var services = scope.ServiceProvider;
                 var context = services.GetRequiredService<MovieDbContext>();
-                context.Database.EnsureCreated();
+                DbInitializer.Initialize(context);
             }
             host.Run();
         }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MovieViewModel>
+﻿@model IEnumerable<Lab23.Data.Model.Movie>
 
 @{
     ViewData["Title"] = "SearchResultGenre";
@@ -8,7 +8,7 @@
     Your Results: @foreach (var item in Model)
     {
     <p>@item.Title</p>
-    <p>@item.Year</p>
+    <p>@item.Runtime</p>
     <p>@item.Genre</p>
 
 }</p>

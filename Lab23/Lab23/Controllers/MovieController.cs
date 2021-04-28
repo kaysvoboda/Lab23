@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Lab23.Data;
-using Lab23.Models;
+﻿using System.Threading.Tasks;
 using Lab23.Data.Model;
+using Lab23.Models;
 using Lab23.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -48,9 +44,9 @@ namespace Lab23.Controllers
         // GET: /<controller>/
 
 
-        public IActionResult Create()
+        public IActionResult RegisterMovie()
         {
-            return View();
+            return View("RegisterMovieView");
         }
 
         public IActionResult SearchView()
@@ -63,12 +59,13 @@ namespace Lab23.Controllers
 
         public async Task<IActionResult> RegisterMovie([Bind("Id, Title, Genre, Runtime")] Movie movie)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                await _repository.Create(movie);
+                await _repository.Register(movie);
                 return RedirectToAction(nameof(Index));
             }
-            return View(movie);
+            ModelState.AddModelError("", "Invalid Entry. Please try again.");
+            return View("RegisterMovieView");
         }
 
         public async Task <IActionResult> Edit(int? id)
@@ -141,17 +138,21 @@ namespace Lab23.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> SearchTitle(string title)
+        {
 
-        //public IActionResult SearchResultTitle(MovieSearchViewModel model)
-        //{
-        //    var list = _repository.Get().Where(x => x.Title.Contains(model.Title));
-        //    return View("SearchResultTitle", list);
-        //}
+            var searchtitle = await _repository.Search(title);
 
-        //public IActionResult SearchResultGenre(MovieSearchViewModel model)
-        //{
-        //    var list = _repository.Get().Where(x => x.Genre == model.Genre);
-        //    return View("SearchResultGenre", list);
-        //}
+            return View("SearchResultTitle", searchtitle);
+
+        }
+
+        public async Task<IActionResult>SearchGenre(string genre)
+        {
+            var searchgenre = await _repository.GenreSearch(genre);
+            return View("SearchResultGenre", searchgenre);
+        }
+
+        
     }
 }

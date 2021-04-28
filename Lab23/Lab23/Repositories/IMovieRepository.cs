@@ -9,12 +9,17 @@ namespace Lab23.Repositories
 {
     public interface IMovieRepository
     {
-
+        
         Task Delete(int id);
         Task<bool> Exists(int id);
         Task<List<Movie>> Get();
         Task<Movie> Get(int id);
+        Task<List<Movie>> Search(string title);
         Task Update(Movie movie);
-        Task Create(Movie movie);
+        Task Register(Movie movie);
+        Task<List<Movie>> GenreSearch(string genre);
+
+
+
     }
 }

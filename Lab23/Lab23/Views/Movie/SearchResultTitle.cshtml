@@ -1,14 +1,18 @@
-﻿@model IEnumerable<MovieViewModel>
+﻿@model IEnumerable<Lab23.Data.Model.Movie>
 
 @{
     ViewData["Title"] = "SearchResultTitle";
 }
 
-<p>
-    Your Results: @foreach (var item in Model)
+<div>
+    <h4> Your Results: </h4>
+    @foreach (var item in Model)
     {
-    <p>@item.Title</p>
-    <p>@item.Year</p>
-    <p>@item.Genre</p>
-
-}</p>
+        <dl class="row">
+                <dt class="col-sm-2"> @item.Title </dt>
+                <dt class="col-sm-2">@item.Runtime </dt>
+                <dt class="col-sm-2">@item.Genre</dt>
+         </dl>
+    }
+    
+ </div>
